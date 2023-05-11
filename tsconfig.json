@@ -8,6 +8,7 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "checkJs": true,
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -23,6 +24,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "stories"],
+  "include": ["src", "stories", "src/config/types/**/*.d.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -1,0 +1,9 @@
+.header {
+  background-color: $red;
+  height: 50px;
+  display: flex;
+  padding: 5px 20px;
+  .logo {
+    max-width: 105px;
+  }
+}
