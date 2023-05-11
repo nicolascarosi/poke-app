@@ -1,0 +1,32 @@
+.simple-list {
+  ul {
+    .list-item {
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.list-item {
+  border-bottom: 1px solid $gray-100;
+  &__content {
+    padding: 15px 20px;
+    width: 100%;
+    text-align: left;
+  }
+  button {
+    &.list-item__content {
+      display: flex;
+      justify-content: space-between;
+      span {
+        transition: transform 300ms;
+      }
+      &:hover {
+        span {
+          transform: translateX(5px);
+        }
+      }
+    }
+  }
+}

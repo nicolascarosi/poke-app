@@ -3,8 +3,18 @@
 @import './utils/mixins';
 @import './utils/variables';
 
+//Pages
+@import './pages/home';
+
 //Base
 @import './global';
+@import './cards';
+
+//Components
+@import './components/list';
 
 //Layout
 @import './layout/header';
+
+//Modifiers
+@import './utils/modifiers';
