@@ -6,7 +6,7 @@ import {
 } from '@/interfaces';
 
 interface IPokemonDetails {
-  pokemon: {
+  pokemon?: {
     name: string;
     base_experience: string;
     height: number;

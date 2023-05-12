@@ -1,11 +1,11 @@
+import { IName } from '@/interfaces';
+
 interface IList {
   children: React.ReactNode;
 }
 
-interface IListItem {
-  entry_number: number;
-  name: string;
-  onClick?: (entry_number: number) => void;
+interface IListItem extends IName {
+  onClick?: (name: string) => void;
 }
 
 export type { IList, IListItem };
