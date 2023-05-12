@@ -17,3 +17,34 @@ body {
   position: relative;
   padding: 40px 0;
 }
+
+.spinner-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  background-color: $bg-spinner;
+  .spinner {
+    width: 10px;
+    height: 10px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 6px dashed $primary;
+    border-radius: 100%;
+    animation: spinAnimation 1.5s 0.3s cubic-bezier(0.17, 0.37, 0.43, 0.67)
+      infinite;
+  }
+}
+
+@keyframes spinAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

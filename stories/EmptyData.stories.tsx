@@ -3,7 +3,7 @@ import { StoryObj, Meta } from '@storybook/react';
 import { EmptyData } from '@/components';
 
 const meta = {
-  title: 'DataDisplay/EmptyData',
+  title: 'Feedback/EmptyData',
   component: EmptyData,
 } satisfies Meta<typeof EmptyData>;
 
