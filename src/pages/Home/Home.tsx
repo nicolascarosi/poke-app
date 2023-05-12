@@ -1,4 +1,4 @@
-import { IListItem, List, ListItem } from '@/components';
+import { IListItem, List, ListItem, PokemonDetails } from '@/components';
 
 const pokemons: IListItem[] = [
   { entry_number: 1, name: 'Bulbasaur' },
@@ -24,6 +24,9 @@ const Home = () => {
             />
           ))}
         </List>
+      </div>
+      <div className="simple-card">
+        <PokemonDetails />
       </div>
     </div>
   );
