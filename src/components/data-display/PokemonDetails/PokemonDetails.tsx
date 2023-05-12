@@ -17,8 +17,8 @@ const PokemonDetails = ({ pokemon }: IPokemonDetailsProps) => {
             alt={pokemon.name}
           />
           <List>
-            <ListItem>Altura: {pokemon.height}</ListItem>
-            <ListItem>Peso: {pokemon.weight}</ListItem>
+            <ListItem>Altura: {pokemon.height} m</ListItem>
+            <ListItem>Peso: {pokemon.weight} lbs</ListItem>
             <ListItem>Experiencia base: {pokemon.base_experience}</ListItem>
           </List>
         </div>
