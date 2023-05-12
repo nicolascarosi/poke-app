@@ -28,7 +28,6 @@
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "@vitejs/plugin-react": "^4.0.0",
-    "vite-plugin-eslint": "^1.8.1",
     "eslint": "^8.38.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
@@ -39,11 +38,11 @@
     "eslint-plugin-storybook": "^0.6.12",
     "prettier": "^2.8.8",
     "prop-types": "15.8.1",
-    "react-router-dom": "^6.11.1",
+    "sass": "^1.62.1",
     "storybook": "7.0.10",
     "swr": "^2.1.5",
     "typescript": "^5.0.2",
     "vite": "^4.3.2",
-    "sass": "^1.62.1"
+    "vite-plugin-eslint": "^1.8.1"
   }
 }

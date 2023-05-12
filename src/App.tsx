@@ -1,18 +1,7 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
-import { Home, MasterPage } from '@/pages';
-import { ROUTES } from '@/config';
+import { MasterPage } from '@/pages';
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path={ROUTES.BASE} element={<MasterPage />}>
-          <Route path={ROUTES.HOME} element={<Home />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+  return <MasterPage />;
 };
 
 export default App;

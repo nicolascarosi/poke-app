@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Home } from '.';
 
 import { Header } from '@/layout';
 
@@ -8,7 +8,7 @@ export const MasterPage = () => {
       <Header />
       <main className="master-page">
         <div className="wrapper">
-          <Outlet />
+          <Home />
         </div>
       </main>
     </>
