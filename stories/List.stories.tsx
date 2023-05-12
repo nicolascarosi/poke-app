@@ -16,22 +16,22 @@ type Story = StoryObj<typeof List>;
 export const SingleItem: Story = {
   render: (args) => (
     <List {...args}>
-      <ListItem {...Item.args} />
+      <ListItem>Charmander</ListItem>
     </List>
   ),
 };
 
 const multipleItems: IListItem[] = [
-  { name: 'Bulbasaur' },
-  { name: 'Charmander' },
-  { name: 'Squirtle' },
+  { children: 'Bulbasaur' },
+  { children: 'Charmander' },
+  { children: 'Squirtle' },
 ];
 
 export const MultipleItems: Story = {
   render: (args) => (
     <List {...args}>
-      {multipleItems.map((item) => (
-        <ListItem key={`entry-${item.name}`} {...item} />
+      {multipleItems.map((item, i) => (
+        <ListItem key={`entry-${i}`}>{item.children}</ListItem>
       ))}
     </List>
   ),

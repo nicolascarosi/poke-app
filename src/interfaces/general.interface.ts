@@ -11,18 +11,32 @@ interface IPokemonType {
   type: IName;
 }
 
-interface IPokemonMove {
-  move: IName;
-}
-
 interface IPokemonAbility {
   ability: IName;
+}
+
+interface IPokemonDetails {
+  name: string;
+  base_experience: string;
+  height: number;
+  id: number;
+  weight: number;
+  sprites: {
+    other: {
+      'official-artwork': {
+        front_default: string;
+      };
+    };
+  };
+  abilities: IPokemonAbility[];
+  stats: IPokemonStat[];
+  types: IPokemonType[];
 }
 
 export type {
   IName,
   IPokemonStat,
   IPokemonType,
-  IPokemonMove,
   IPokemonAbility,
+  IPokemonDetails,
 };

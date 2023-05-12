@@ -1,23 +1,7 @@
-import {
-  IPokemonAbility,
-  IPokemonMove,
-  IPokemonStat,
-  IPokemonType,
-} from '@/interfaces';
+import { IPokemonDetails } from '@/interfaces';
 
-interface IPokemonDetails {
-  pokemon?: {
-    name: string;
-    base_experience: string;
-    height: number;
-    moves: IPokemonMove[];
-    abilities: IPokemonAbility[];
-    sprites: {
-      front_default: string;
-    };
-    stats: IPokemonStat[];
-    types: IPokemonType[];
-  };
+interface IPokemonDetailsProps {
+  pokemon?: IPokemonDetails;
 }
 
-export type { IPokemonDetails };
+export type { IPokemonDetailsProps };

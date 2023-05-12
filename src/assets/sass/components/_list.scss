@@ -1,4 +1,10 @@
 .simple-list {
+  &__title {
+    font-weight: 700;
+    padding: 15px 0;
+    width: 100%;
+    border-bottom: 1px solid $gray-100;
+  }
   ul {
     .list-item {
       &:last-child {

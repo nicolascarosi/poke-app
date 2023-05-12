@@ -2,19 +2,19 @@ import { IListItem } from './List.interface';
 
 import { iconChevron } from '@/assets/images';
 
-const ListItem = ({ name, onClick }: IListItem) => {
+const ListItem = ({ children, id = '', onClick }: IListItem) => {
   const getItem = () => {
     if (onClick) {
       return (
-        <button className="list-item__content" onClick={() => onClick(name)}>
-          <span>{name}</span>
+        <button className="list-item__content" onClick={() => onClick(id)}>
+          <span>{children}</span>
           <img src={iconChevron} alt="Icon chevron" />
         </button>
       );
     } else {
       return (
         <div className="list-item__content">
-          <span>{name}</span>
+          <span>{children}</span>
         </div>
       );
     }
