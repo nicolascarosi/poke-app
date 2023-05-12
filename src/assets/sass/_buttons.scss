@@ -1,0 +1,18 @@
+.btn {
+  padding: 10px 20px;
+  @include font-size(16, 16, 700);
+  border-radius: 4px;
+  &.primary {
+    background-color: $primary;
+    color: $white;
+    transition: background 300ms;
+    &:hover {
+      background-color: $primary-light;
+    }
+  }
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+    pointer-events: none;
+  }
+}
