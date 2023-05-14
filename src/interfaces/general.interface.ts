@@ -17,7 +17,7 @@ interface IPokemonAbility {
 
 interface IPokemonDetails {
   name: string;
-  base_experience: string;
+  base_experience: number;
   height: number;
   id: number;
   weight: number;

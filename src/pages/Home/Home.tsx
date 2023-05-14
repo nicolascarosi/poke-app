@@ -1,5 +1,5 @@
-import useSWR, { Fetcher } from 'swr';
 import { useEffect, useState } from 'react';
+import useSWR, { Fetcher } from 'swr';
 
 import { Button, List, ListItem, PokemonDetails, Spinner } from '@/components';
 import { endpoints } from '@/config';
