@@ -45,7 +45,7 @@ const Home = () => {
   return (
     <div className="home-container">
       {/* Pokemon List */}
-      <div className="simple-card --no-padding">
+      <div className="pokemon-list simple-card --no-padding">
         {isLoading ? <Spinner /> : null}
         <List>
           {pokemons.map((pokemon) => (
@@ -67,7 +67,8 @@ const Home = () => {
           <Button label="Siguiente" onClick={handleClickNextPage} />
         </div>
       </div>
-      <div className="simple-card">
+      {/* Pokemon Details */}
+      <div className="pokemon-details simple-card">
         {loadingPokemon ? <Spinner /> : null}
         <PokemonDetails pokemon={selectedPokemon} />
       </div>
