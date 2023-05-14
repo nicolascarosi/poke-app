@@ -1,11 +1,9 @@
 import { render } from '@testing-library/react';
 
-import { PokemonDetails } from '.';
-
-import { IPokemonDetails } from '@/interfaces';
+import { IPokemon, PokemonDetails } from '.';
 
 describe('PokemonDetails component', () => {
-  const pokemon: IPokemonDetails = {
+  const pokemon: IPokemon = {
     name: 'Pikachu',
     id: 25,
     height: 4,

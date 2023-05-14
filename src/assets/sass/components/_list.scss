@@ -21,6 +21,8 @@
     width: 100%;
     text-align: left;
     text-transform: capitalize;
+    @include font-size(14);
+    color: $black;
   }
   button {
     &.list-item__content {

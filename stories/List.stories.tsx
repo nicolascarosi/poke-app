@@ -1,10 +1,18 @@
-import { StoryObj, Meta } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/react';
 
-import { IListItem, List, ListItem } from '@/components';
+import { IListItem, List, ListItem, NavItem } from '@/components';
 
 const meta = {
   title: 'DataDisplay/List',
   component: List,
+  argTypes: {
+    title: {
+      control: { type: 'text' },
+    },
+  },
+  args: {
+    title: 'List title',
+  },
 } satisfies Meta<typeof List>;
 
 export default meta;
@@ -30,6 +38,18 @@ export const MultipleItems: Story = {
     <List {...args}>
       {multipleItems.map((item, i) => (
         <ListItem key={`entry-${i}`}>{item.children}</ListItem>
+      ))}
+    </List>
+  ),
+};
+
+export const MultipleNavItems: Story = {
+  render: (args) => (
+    <List {...args}>
+      {multipleItems.map((item, i) => (
+        <NavItem key={`entry-${i}`} onClick={() => console.log('click')}>
+          {item.children}
+        </NavItem>
       ))}
     </List>
   ),

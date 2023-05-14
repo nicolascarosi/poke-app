@@ -4,7 +4,7 @@ const PokemonDetails = ({ pokemon }: IPokemonDetailsProps) => {
   if (!pokemon) return <EmptyData title="¡Selecciona un Pokémon!" />;
 
   return (
-    <section className="pokemon-details">
+    <div className="pokemon-details">
       <div className="pokemon-details__header">
         <h1 className="pokemon-details__header__title">{pokemon.name}</h1>
         <p className="pokedex-number">#{pokemon.id}</p>
@@ -58,7 +58,7 @@ const PokemonDetails = ({ pokemon }: IPokemonDetailsProps) => {
           ) : null}
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

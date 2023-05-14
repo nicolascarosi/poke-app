@@ -9,13 +9,9 @@ const meta = {
     children: {
       control: { type: 'text' },
     },
-    id: {
-      control: { type: 'text' },
-    },
   },
   args: {
     children: 'Charmander',
-    id: 'Charmander',
   },
 } satisfies Meta<typeof ListItem>;
 

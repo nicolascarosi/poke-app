@@ -1,12 +1,17 @@
 import { useEffect, useState } from 'react';
 import useSWR, { Fetcher } from 'swr';
 
-import { Button, List, ListItem, PokemonDetails, Spinner } from '@/components';
-import { endpoints } from '@/config';
-import { IName, IPokemonDetails } from '@/interfaces';
+import {
+  Button,
+  IPokemon,
+  List,
+  NavItem,
+  PokemonDetails,
+  Spinner,
+} from '@/components';
+import { OFFSET_PAGE_POKEMON_LIST, endpoints } from '@/config';
+import { IName } from '@/interfaces';
 import { pokeapiService } from '@/services';
-
-const OFFSET = 12;
 
 const fetcher: Fetcher<{ results: IName[] }, string> = (...args) =>
   fetch(...args).then((res) => res.json());
@@ -14,19 +19,21 @@ const fetcher: Fetcher<{ results: IName[] }, string> = (...args) =>
 const Home = () => {
   const [pageIndex, setPageIndex] = useState<number>(0);
   const [pokemons, setPokemons] = useState<IName[]>([]);
-  const [selectedPokemon, setSelectedPokemon] = useState<IPokemonDetails>();
+  const [selectedPokemon, setSelectedPokemon] = useState<IPokemon>();
   const [loadingPokemon, setLoadingPokemon] = useState(false);
 
   const handleClickNextPage = () => setPageIndex((prevState) => prevState + 1);
   const handleClickPrevPage = () => setPageIndex((prevState) => prevState - 1);
 
   const { data, isLoading } = useSWR(
-    `${endpoints.GET_POKEMONS}?limit=${OFFSET}&offset=${pageIndex * OFFSET}`,
+    `${endpoints.GET_POKEMONS}?limit=${OFFSET_PAGE_POKEMON_LIST}&offset=${
+      pageIndex * OFFSET_PAGE_POKEMON_LIST
+    }`,
     fetcher
   );
 
   useEffect(() => {
-    if (data) setPokemons(data.results);
+    data && setPokemons(data.results);
   }, [data]);
 
   const handleClickItem = async (id: string) => {
@@ -45,17 +52,17 @@ const Home = () => {
   return (
     <div className="home-container">
       {/* Pokemon List */}
-      <div className="pokemon-list simple-card --no-padding">
+      <nav className="pokemon-list simple-card --no-padding">
         {isLoading ? <Spinner /> : null}
         <List>
           {pokemons.map((pokemon) => (
-            <ListItem
+            <NavItem
               key={`pokemon-${pokemon.name}`}
               id={pokemon.name}
               onClick={handleClickItem}
             >
               {pokemon.name}
-            </ListItem>
+            </NavItem>
           ))}
         </List>
         <div className="simple-card__footer">
@@ -66,12 +73,12 @@ const Home = () => {
           />
           <Button label="Siguiente" onClick={handleClickNextPage} />
         </div>
-      </div>
+      </nav>
       {/* Pokemon Details */}
-      <div className="pokemon-details simple-card">
+      <section className="pokemon-details simple-card">
         {loadingPokemon ? <Spinner /> : null}
         <PokemonDetails pokemon={selectedPokemon} />
-      </div>
+      </section>
     </div>
   );
 };

@@ -5,8 +5,11 @@ interface IList {
 
 interface IListItem {
   children: React.ReactNode;
-  id?: string;
-  onClick?: (id: string) => void;
 }
 
-export type { IList, IListItem };
+interface INavItem extends IListItem {
+  id?: string;
+  onClick: (id: string) => void;
+}
+
+export type { IList, IListItem, INavItem };
