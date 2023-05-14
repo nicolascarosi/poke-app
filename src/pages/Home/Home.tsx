@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import useSWR, { Fetcher } from 'swr';
 
 import {
@@ -36,7 +36,7 @@ const Home = () => {
     data && setPokemons(data.results);
   }, [data]);
 
-  const handleClickItem = async (id: string) => {
+  const handleClickItem = useCallback(async (id: string) => {
     try {
       setLoadingPokemon(true);
       const response = await pokeapiService.getPokemonById(id);
@@ -47,7 +47,7 @@ const Home = () => {
     } finally {
       setLoadingPokemon(false);
     }
-  };
+  }, []);
 
   return (
     <div className="home-container">

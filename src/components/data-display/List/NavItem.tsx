@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { INavItem } from './List.interface';
 
 import { iconChevron } from '@/assets/images';
@@ -11,4 +13,6 @@ const NavItem = ({ children, id = '', onClick }: INavItem) => (
   </li>
 );
 
-export { NavItem };
+const MemoizedNavItem = React.memo(NavItem);
+
+export { MemoizedNavItem as NavItem };
