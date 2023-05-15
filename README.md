@@ -6,10 +6,10 @@
 - **SASS**
 - **Fetch API**
 - **SWR**
-- **Storybook**
-- **Jest**
+- **Storybook 7.0.10**
+- **Jest 29.5**
 - **React Testing Library**
-- **Cypress**
+- **Cypress 12.12**
 - **Vite**
 
 ### How do I get set up?
@@ -18,7 +18,6 @@
 
 - GIT
 - NodeJs
-- pnpm
 
 #### Setup guide:
 
